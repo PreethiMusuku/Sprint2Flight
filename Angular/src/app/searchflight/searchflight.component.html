@@ -38,7 +38,7 @@
         </div>
         <h2>{{result}}</h2>
         <h2 class="text-danger" *ngIf="error">{{message}}</h2>
-            <table class="table table-striped container" *ngIf="searchs&&searchs.length>0">
+            <table class="table table-striped container" *ngIf="searchs && searchs.length>0">
             <thead>
                 <tr>
                     <th>Flightnumber</th>
@@ -63,5 +63,8 @@
             </tbody>
         </table>
 </div>
+<div *ngIf="status">
+        <h4 *ngIf="searchs.length < 1" align="center">No Flights Found</h4>
+    </div>
 </body>
 

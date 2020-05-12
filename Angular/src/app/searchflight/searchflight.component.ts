@@ -14,7 +14,9 @@ export class SearchflightComponent implements OnInit {
   message: any;
   error: boolean;
 result:any;
+status:boolean;
   constructor(private service: UserFlightService) { 
+    this.status=false;
   }
   onSubmit(SearchFlight:Flight) {
 console.log(SearchFlight);
@@ -22,14 +24,12 @@ this.valid = this.validation(SearchFlight.fromloc,SearchFlight.toloc,SearchFligh
 if(this.valid)
     this.service.getSearchFlights(SearchFlight).subscribe(
       response => this.handleSuccessfulResponse(response),
-      error=>{console.log("exception occured" );
-    this.result="FlightNumber not exists";}
     );
 
   }
   handleSuccessfulResponse(response) {
+    this.status=true;
     this.searchs = response;
-    console.log(this.searchs);
     
   }
 

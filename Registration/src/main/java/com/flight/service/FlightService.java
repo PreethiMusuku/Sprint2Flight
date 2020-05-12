@@ -12,9 +12,9 @@ public class FlightService implements FlightServiceImpl{
 	@Autowired
 	private FlightDao flightDao;
 	@Override
-	public String register(Register reg) {
-	flightDao.save(reg);
-	return "registered successfully";
+	public Register register(Register reg) {
+	return flightDao.save(reg);
+
 	}
 
 	  public Register findOne(String reg) {

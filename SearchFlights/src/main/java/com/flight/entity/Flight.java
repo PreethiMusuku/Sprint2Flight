@@ -90,7 +90,7 @@ public String toString() {
 			+ toloc + ", seatCapacity=" + seatCapacity + ", costPerSeat=" + costPerSeat + ", date1=" + date1 + "]";
 }
 public Flight()  {
-	
+	super();
 }
 
 }
